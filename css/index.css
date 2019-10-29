@@ -1,0 +1,80 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/*.gallery {
+    width: 100;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}*/
+
+.city{
+    position: relative;
+}
+
+.city::before,
+.city::after {
+    content: "";
+    position: absolute;
+    top: 1.5em;
+    bottom: 1.5em;
+    left: 1.5em;
+    right: 1.5em;
+}
+
+.city::before {
+   border-top: 1px solid white;
+   border-bottom: 1px solid white;
+   transform: scale(0, 1);
+   transition: transform ease-in-out 250ms;
+}
+
+.city:hover::before {
+    transform: scale(1.05, 1);
+}
+
+.city::after {
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    transform: scale(1, 0);
+    transition: transform ease-in-out 250ms;
+}
+
+.city:hover::after {
+    transform: scale(1, 1.05);
+}
+
+.city-photo {
+    display: block;
+    max-width: 100%;
+    transition: opacity ease-in-out 300ms;
+    opacity: 1;
+}
+
+.city:hover .city-photo {
+    opacity: 0.6;
+}
+
+.city-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    opacity: 0;
+    transition: opacity ease-in-out 200ms;
+}
+
+.city:hover .city-name {
+    opacity: 1;
+}
+
